@@ -1,0 +1,27 @@
+* {
+  font-family: 'Anaheim', sans-serif;
+  margin: 0;
+  background-color: black;
+  color: white;
+}
+
+.top {
+  display: flex;
+  position: relative;
+  top: 30px;
+  background-image: url('images/nasa.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 300px;
+  background-size: 300px;
+}
+
+.title {
+  position: relative;
+  bottom: 20px;
+  font-size: 40px;
+  text-align: center;
+  display: inline;
+  margin: 0 auto;
+  height: 30px;
+}
