@@ -22,6 +22,9 @@ var app = new Vue({
     },
       next: function() {
         app.currentNumber += 1
+      },
+      previous: function() {
+        app.currentNumber -= 1
       }
   }
 })
