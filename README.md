@@ -5,6 +5,8 @@
 NASA photo challenge is a requirement for the Turing School of Software and Design. It is a project to mimic a job take home challenge. The specs can be found [here](https://gist.github.com/letakeane/28d852307097695c5d50b15857cb28eb)
 Project must utilize the NASA APoD API and Vue.js
 
+See it live [here](https://lkshamus.github.io/NASA-photo-challenge/)
+
 ## Tech Stack Used
 
 * Vue.js
@@ -14,4 +16,5 @@ Project must utilize the NASA APoD API and Vue.js
 
 ## Design and Comps
 
-<img width="1440" alt="screen shot 2019-01-07 at 8 37 08 pm" src="https://user-images.githubusercontent.com/39738807/50808508-2119c780-12bc-11e9-89fd-d2ca9bcef1e9.png">
+<img width="1438" alt="screen shot 2019-01-08 at 4 57 05 pm" src="https://user-images.githubusercontent.com/39738807/50866266-832f0700-1366-11e9-8ca4-9baed7ef8185.png">
+
