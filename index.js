@@ -44,30 +44,51 @@ var app = new Vue({
       image: 'http://cdn.spacetelescope.org/archives/images/screen/heic1816a.jpg', date: '1/21/2019', title: 'Stunning Black Eye Galaxy'
     },
   ],
-    currentNumber: 0
+    currentNumber: 0,
+    date: 09
   }, 
   methods: {
-    getImages: function() {
-      var app = this
-      app.description = 'loading...'
-      axios.get(`https://api.nasa.gov/planetary/apod?api_key=8hO77FLyV0b8qpVKbIy5PTsgrEoLqVq56ByxlomR`)
-        .then(function (response) {
-          app.description = response.data.explanation
-          console.log(app.description)
-        })
-        .catch(function (error) {
-          app.description = "Error"
-        })
-    },
+    // getImage: function() {
+    //   var app = this
+    //   app.description = 'loading...'
+    //   axios.get(`https://api.nasa.gov/planetary/apod?api_key=8hO77FLyV0b8qpVKbIy5PTsgrEoLqVq56ByxlomR`)
+    //     .then(function (response) {
+    //       app.description = response.data.explanation
+    //     })
+    //     .catch(function (error) {
+    //       app.description = "Error"
+    //     })
+    // },
+    // getNextImage: function() {
+    //   var app = this
+    //   let date = app.date += 1
+    //   app.description = 'loading...'
+    //   axios.get(`https://api.nasa.gov/planetary/apod?date=2018-01-${date}&api_key=8hO77FLyV0b8qpVKbIy5PTsgrEoLqVq56ByxlomR`)
+    //     .then(function (response) {
+    //       app.description = response.data.explanation
+    //     })
+    //     .catch(function (error) {
+    //       app.description = "Error"
+    //     })
+    // },
+    // getPreviousImage: function() {
+    //   var app = this
+    //   let date = app.date -= 1
+    //   app.description = 'loading...'
+    //   axios.get(`https://api.nasa.gov/planetary/apod?date=2018-01-${date}&api_key=8hO77FLyV0b8qpVKbIy5PTsgrEoLqVq56ByxlomR`)
+    //     .then(function (response) {
+    //       app.description = response.data.explanation
+    //     })
+    //     .catch(function (error) {
+    //       app.description = "Error"
+    //     })
+    // },
     next: function() {
       app.currentNumber += 1
     },
     previous: function() {
       app.currentNumber -= 1
     }, 
-    // disabledBtn: function() {
-    //   app.currentNumber < 0
-    // }
   }
 })
 

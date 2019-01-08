@@ -100,4 +100,12 @@ button:hover::after {
 button:hover{
   border:1px solid #ffffff;
 }
-  
+
+h2, p {
+  padding: 5px;
+}
+
+button:disabled {
+  color: black;
+  border: 1px solid black;
+}
