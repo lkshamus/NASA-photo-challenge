@@ -8,11 +8,21 @@
   </head>
   <body>
     <div id='app'>
-      <section class='top'>
+      <section class='hero'>
       <h1 class='title'>{{ title }}</h1>
+    </section>
+    <section class='picture-area'>
+      <div class='info'>
+        <button v-on:click="getImages">load image of the day!</button>
+        <h1></h1>
+        <p v-bind='description'>{{ description }}</p>
+        <button class='forward'>forward</button>
+        <button class='backward'>backward</button>
+      </div>
     </section>
     </div>
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
   <script src='./index.js'></script>
   </body>
 </html>
