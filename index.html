@@ -14,10 +14,10 @@
     <section class='picture-area'>
       <div class='info'>
         <!-- <button v-on:click="getImages">load image of the day!</button> -->
-        <h1>{{ titles[currentNumber] }}</h1>
+        <h1>{{ images[currentNumber].title }}</h1>
         <p v-bind='description'>{{ description }}</p>
-        <img class='image-of-day' :src='images[currentNumber]' />
-        <p class='date'>{{ dates[currentNumber] }}</p>
+        <img class='image-of-day' :src='images[currentNumber].image' />
+        <p class='date'>{{ images[currentNumber].date }}</p>
         <button v-on:click="previous" class='backward'>previous</button>
         <button v-on:click="next" class='forward'>next</button>
       </div>
