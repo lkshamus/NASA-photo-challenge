@@ -16,8 +16,9 @@
         <button v-on:click="getImages">load image of the day!</button>
         <h1></h1>
         <p v-bind='description'>{{ description }}</p>
-        <button class='forward'>forward</button>
-        <button class='backward'>backward</button>
+        <img class='image-of-day' :src='image' />
+        <button class='backward'>previous</button>
+        <button class='forward'>next</button>
       </div>
     </section>
     </div>
