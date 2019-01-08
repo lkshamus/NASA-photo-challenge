@@ -16,7 +16,7 @@
         <button v-on:click="getImages">load image of the day!</button>
         <h1></h1>
         <p v-bind='description'>{{ description }}</p>
-        <img class='image-of-day' :src='image' />
+        <img class='image-of-day' :src='images[currentNumber]' />
         <button class='backward'>previous</button>
         <button class='forward'>next</button>
       </div>
