@@ -43,9 +43,22 @@ var app = new Vue({
     {
       image: 'http://cdn.spacetelescope.org/archives/images/screen/heic1816a.jpg', date: '1/21/2019', title: 'Stunning Black Eye Galaxy'
     },
+    {
+      image: 'https://www.google.com/url?sa=i&source=imgres&cd=&cad=rja&uact=8&ved=2ahUKEwiomO6Ur9_fAhXq5oMKHcLACKsQjRx6BAgBEAU&url=https%3A%2F%2Fwww.space.com%2F39692-stars-in-rosette-nebula-heart-photo.html&psig=AOvVaw3nwEGh9Kmfp-GJe50eRKcx&ust=1547077560546441', date: '1/22/2019', title: 'Wonderous Beautiful Galaxy'
+    },
+    {
+      image: 'https://cdn.images.express.co.uk/img/dynamic/151/590x/Hubble-space-telescope-pictures-NASA-photos-space-crab-nebula-934103.jpg', date: '1/22/2019', title: 'Alpha Centauri System'
+    },
+    {
+      image: 'https://edu.glogster.com/library/proxy?url=http%3A%2F%2Fth08.deviantart.net%2Ffs70%2FPRE%2Ff%2F2014%2F071%2F5%2F5%2Fblue_space_by_whendell-d79zabi.jpg', date: '1/23/2019', title: 'Incredible Antares'
+    },
+    {
+      image: 'https://amp.businessinsider.com/images/55e47515dd0895f7118b464c-2732-1366.jpg', date: '1/24/2019', title: 'Stunning Sirius'
+    },
   ],
     currentNumber: 0,
-    date: 09
+    date: 09,
+    disableBtn: ''
   }, 
   methods: {
     // getImage: function() {
@@ -84,11 +97,17 @@ var app = new Vue({
     //     })
     // },
     next: function() {
-      app.currentNumber += 1
+      app.currentNumber += 1;
+      if (app.currentNumber === app.images.length) {
+        return app.disableBtn == 'disable'
+      }
     },
     previous: function() {
       app.currentNumber -= 1
     }, 
+    disable: function () {
+      return !disabled
+    }
   }
 })
 
