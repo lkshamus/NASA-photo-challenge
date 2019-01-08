@@ -3,6 +3,7 @@ var app = new Vue({
   data: {
     title: 'Photo of the day!',
     description: '',
+    image: 'https://apod.nasa.gov/apod/image/1901/Geminids46P_jcc_2000.jpg'
     // initialDescription: '' 
   }, 
   methods: {
