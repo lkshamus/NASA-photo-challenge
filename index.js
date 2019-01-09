@@ -56,10 +56,10 @@ var app = new Vue({
   }, 
   computed: {
     isNextPhotoAvailable: function() {
-      return this.currentNumber + 1  !== this.images.length;
+      return (this.currentNumber + 1)  !== (this.images.length);
     },
     isPrevPhotoAvailable: function() {
-      return this.currentNumber - 1  !== -1;
+      return (this.currentNumber - 1)  !== -1;
     }
   },
   methods: {
