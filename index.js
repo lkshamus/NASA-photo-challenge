@@ -60,6 +60,9 @@ var app = new Vue({
     },
     isPrevPhotoAvailable: function() {
       return (this.currentNumber - 1)  !== -1;
+    },
+    isTodaysPhoto: function() {
+      return this.currentNumber !== 0
     }
   },
   methods: {
@@ -69,6 +72,9 @@ var app = new Vue({
     previous: function() {
       return this.currentNumber -= 1;
     }, 
+    today: function () {
+      return this.currentNumber = 0;
+    }
 //     // getImage: function() {
 //     //   var app = this
 //     //   app.description = 'loading...'
