@@ -52,13 +52,10 @@ var app = new Vue({
     {
       image: 'https://edu.glogster.com/library/proxy?url=http%3A%2F%2Fth08.deviantart.net%2Ffs70%2FPRE%2Ff%2F2014%2F071%2F5%2F5%2Fblue_space_by_whendell-d79zabi.jpg', date: '1/23/2019', title: 'Incredible Antares'
     },
-    {
-      image: 'https://amp.businessinsider.com/images/55e47515dd0895f7118b464c-2732-1366.jpg', date: '1/24/2019', title: 'Stunning Sirius'
-    },
   ],
     currentNumber: 0,
     date: 09,
-    disableBtn: ''
+    photosAvailable: true,
   }, 
   methods: {
     // getImage: function() {
@@ -99,15 +96,12 @@ var app = new Vue({
     next: function() {
       app.currentNumber += 1;
       if (app.currentNumber === app.images.length) {
-        return app.disableBtn == 'disable'
+        return !app.photosAvailable
       }
     },
     previous: function() {
-      app.currentNumber -= 1
+      return app.currentNumber -= 1
     }, 
-    disable: function () {
-      return !disabled
-    }
   }
 })
 

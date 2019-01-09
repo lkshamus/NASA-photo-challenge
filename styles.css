@@ -105,7 +105,8 @@ h2, p {
   padding: 5px;
 }
 
-button:disabled {
+button:disabled, .disabledButton {
   color: black;
   border: 1px solid black;
 }
+
