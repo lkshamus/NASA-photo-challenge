@@ -18,8 +18,8 @@
         <p v-bind='description'>{{ description }}</p>
         <img class='image-of-day' :src='images[currentNumber].image' />
         <p class='date'>{{ images[currentNumber].date }}</p>
-        <button :disabled="!currentNumber" v-on:click="previous" class='backward'>previous</button>
-        <button :disabled="disableBtn == disable" v-on:click="next" class='forward'>next</button>
+        <button :disabled="!isPrevPhotoAvailable" v-on:click="previous" class='backward'>previous</button>
+        <button :disabled="!isNextPhotoAvailable" v-on:click="next" :class="{disabledButton: !isNextPhotoAvailable}" class='forward'>next</button>
       </div>
     </section>
     </div>

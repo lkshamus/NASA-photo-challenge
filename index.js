@@ -1,9 +1,10 @@
+Vue.config.devtools = true
 var app = new Vue({
   el: '#app',
   data: {
     title: 'Photo of the day!',
     description: '',
-    images:   [
+    images: [
     {
       image: 'https://cdn.spacetelescope.org/archives/images/wallpaper2/heic1509a.jpg', date: '1/9/2019', title: 'Beautiful Milky Way'
     },
@@ -13,7 +14,7 @@ var app = new Vue({
     {
       image: 'https://icdn3.digitaltrends.com/image/space-engine-featured-510x0.jpg?ver=1', date: '1/11/2019', title: 'Wonderous Large Magellanic Cloud'
     },
-    {
+        {
       image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWSJ9vDVxp4e9Ut5zJm_O-6_L0QicVhkxS1OtCuihj599tJPgx', date: '1/12/2019', title: 'Legendary Messier 81'
     },
     {
@@ -44,70 +45,64 @@ var app = new Vue({
       image: 'http://cdn.spacetelescope.org/archives/images/screen/heic1816a.jpg', date: '1/21/2019', title: 'Stunning Black Eye Galaxy'
     },
     {
-      image: 'https://www.google.com/url?sa=i&source=imgres&cd=&cad=rja&uact=8&ved=2ahUKEwiomO6Ur9_fAhXq5oMKHcLACKsQjRx6BAgBEAU&url=https%3A%2F%2Fwww.space.com%2F39692-stars-in-rosette-nebula-heart-photo.html&psig=AOvVaw3nwEGh9Kmfp-GJe50eRKcx&ust=1547077560546441', date: '1/22/2019', title: 'Wonderous Beautiful Galaxy'
-    },
-    {
       image: 'https://cdn.images.express.co.uk/img/dynamic/151/590x/Hubble-space-telescope-pictures-NASA-photos-space-crab-nebula-934103.jpg', date: '1/22/2019', title: 'Alpha Centauri System'
     },
     {
-      image: 'https://edu.glogster.com/library/proxy?url=http%3A%2F%2Fth08.deviantart.net%2Ffs70%2FPRE%2Ff%2F2014%2F071%2F5%2F5%2Fblue_space_by_whendell-d79zabi.jpg', date: '1/23/2019', title: 'Incredible Antares'
-    },
-    {
-      image: 'https://amp.businessinsider.com/images/55e47515dd0895f7118b464c-2732-1366.jpg', date: '1/24/2019', title: 'Stunning Sirius'
-    },
+      image: 'https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/HPOKFbR/the-end-title-on-tv-noise-background-ending-sequence-1920x1080-1080p-hd-footage_qy9_qm3i__F0000.png', title: 'End of slideshow! Thank you for checking NASA\'s photo of the day! '
+    }
+
   ],
-    currentNumber: 0,
-    date: 09,
-    disableBtn: ''
+    currentNumber: 0
   }, 
+  computed: {
+    isNextPhotoAvailable: function() {
+      return this.currentNumber + 1  !== this.images.length;
+    },
+    isPrevPhotoAvailable: function() {
+      return this.currentNumber - 1  !== -1;
+    }
+  },
   methods: {
-    // getImage: function() {
-    //   var app = this
-    //   app.description = 'loading...'
-    //   axios.get(`https://api.nasa.gov/planetary/apod?api_key=8hO77FLyV0b8qpVKbIy5PTsgrEoLqVq56ByxlomR`)
-    //     .then(function (response) {
-    //       app.description = response.data.explanation
-    //     })
-    //     .catch(function (error) {
-    //       app.description = "Error"
-    //     })
-    // },
-    // getNextImage: function() {
-    //   var app = this
-    //   let date = app.date += 1
-    //   app.description = 'loading...'
-    //   axios.get(`https://api.nasa.gov/planetary/apod?date=2018-01-${date}&api_key=8hO77FLyV0b8qpVKbIy5PTsgrEoLqVq56ByxlomR`)
-    //     .then(function (response) {
-    //       app.description = response.data.explanation
-    //     })
-    //     .catch(function (error) {
-    //       app.description = "Error"
-    //     })
-    // },
-    // getPreviousImage: function() {
-    //   var app = this
-    //   let date = app.date -= 1
-    //   app.description = 'loading...'
-    //   axios.get(`https://api.nasa.gov/planetary/apod?date=2018-01-${date}&api_key=8hO77FLyV0b8qpVKbIy5PTsgrEoLqVq56ByxlomR`)
-    //     .then(function (response) {
-    //       app.description = response.data.explanation
-    //     })
-    //     .catch(function (error) {
-    //       app.description = "Error"
-    //     })
-    // },
     next: function() {
-      app.currentNumber += 1;
-      if (app.currentNumber === app.images.length) {
-        return app.disableBtn == 'disable'
-      }
+      this.currentNumber += 1;
     },
     previous: function() {
-      app.currentNumber -= 1
+      return this.currentNumber -= 1;
     }, 
-    disable: function () {
-      return !disabled
-    }
+//     // getImage: function() {
+//     //   var app = this
+//     //   app.description = 'loading...'
+//     //   axios.get(`https://api.nasa.gov/planetary/apod?api_key=8hO77FLyV0b8qpVKbIy5PTsgrEoLqVq56ByxlomR`)
+//     //     .then(function (response) {
+//     //       app.description = response.data.explanation
+//     //     })
+//     //     .catch(function (error) {
+//     //       app.description = "Error"
+//     //     })
+//     // },
+//     // getNextImage: function() {
+//     //   var app = this
+//     //   let date = app.date += 1
+//     //   app.description = 'loading...'
+//     //   axios.get(`https://api.nasa.gov/planetary/apod?date=2018-01-${date}&api_key=8hO77FLyV0b8qpVKbIy5PTsgrEoLqVq56ByxlomR`)
+//     //     .then(function (response) {
+//     //       app.description = response.data.explanation
+//     //     })
+//     //     .catch(function (error) {
+//     //       app.description = "Error"
+//     //     })
+//     // },
+//     // getPreviousImage: function() {
+//     //   var app = this
+//     //   let date = app.date -= 1
+//     //   app.description = 'loading...'
+//     //   axios.get(`https://api.nasa.gov/planetary/apod?date=2018-01-${date}&api_key=8hO77FLyV0b8qpVKbIy5PTsgrEoLqVq56ByxlomR`)
+//     //     .then(function (response) {
+//     //       app.description = response.data.explanation
+//     //     })
+//     //     .catch(function (error) {
+//     //       app.description = "Error"
+//     //     })
+//     // },
   }
 })
-
